@@ -1,0 +1,3 @@
+466-cooldown: 40 # Cooldown timer in seconds 
+466-message: "§6» §7Enchanted Golden Apple is on cooldown for {466-cooldown}s" # Cooldown message
+
