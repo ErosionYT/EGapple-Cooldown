@@ -27,13 +27,13 @@ class EnchantedGoldenAppleEvent implements Listener {
     {
         $item = $event->getItem();
         if($item instanceof GoldenAppleEnchanted) {
-            $cooldown = $this->config->get("466-cooldown");
+            $cooldown = $this->config->get("cooldown");
             $player = $event->getPlayer();
             if (isset($this->eapplecd[$player->getName()]) and time() - $this->eapplecd[$player->getName()] < $cooldown) {
                 $event->setCancelled(true);
                 $time = time() - $this->eapplecd[$player->getName()];
-                $message = $this->config->get("466-message");
-                $message = str_replace("{466-cooldown}", ($cooldown - $time), $message);
+                $message = $this->config->get("message");
+                $message = str_replace("{cooldown}", ($cooldown - $time), $message);
                 $player->sendMessage($message);
             } else {
                 $this->eapplecd[$player->getName()] = time();
